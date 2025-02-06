@@ -14,6 +14,7 @@ public class Resume {
     @Column(columnDefinition = "MEDIUMBLOB")
     private byte[] data;
     
+    
     public Resume() {
     }
     

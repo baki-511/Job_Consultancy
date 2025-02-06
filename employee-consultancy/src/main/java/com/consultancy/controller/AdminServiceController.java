@@ -43,7 +43,7 @@ public class AdminServiceController {
     
     @GetMapping("/services/all")
     public String allService(Model model) {
-        return allService(model, 0, 2);
+        return allService(model, 0, 10);
     }
     
     @GetMapping("/services/all/{page}")

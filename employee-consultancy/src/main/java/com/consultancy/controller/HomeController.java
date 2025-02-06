@@ -30,10 +30,16 @@ public class HomeController {
         return "/pages/career";
     }
     
-    @GetMapping("/upload-cv")
-    public String uploadCV() {
-        return "/pages/uploadCV";
+    @GetMapping("/about")
+    public String about() {
+        return "/pages/about";
     }
+    
+    @GetMapping("/service")
+    public String service() {
+        return "/pages/service";
+    }
+    
     
 //    @GetMapping("/download/{id}")
 //    public String downloadFile(@PathVariable Long resumeId, HttpServletResponse response) throws IOException {

@@ -10,6 +10,7 @@
     <div th:replace="~{common :: common(~{::link})}"></div>
 <!--    <link rel="stylesheet" th:href="@{/user/css/counter.css}">-->
     <link rel="stylesheet" th:href=@{/user/css/uploadCV.css}>
+    <link rel="stylesheet" th:href=@{/user/css/toast.css}>
 
 </head>
 <body>
@@ -17,6 +18,9 @@
 
 <!--Header Section-->
 <div th:replace="~{components/navbar :: navbar}"></div>
+
+<!--Float Msg-->
+<div th:replace="~{components/float-msg :: toast}"></div>
 
 <div th:replace="~{components/uploadCV :: uploadCV}"></div>
 
@@ -32,6 +36,7 @@
 <script th:src=@{/user/js/banner.js}></script>
 <script th:src=@{/user/js/uploadCV.js}></script>
 
+<script th:src=@{/user/js/toast.js}></script>
 
 </body>
 </html>

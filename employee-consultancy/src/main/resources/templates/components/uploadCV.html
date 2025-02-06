@@ -10,7 +10,7 @@ l<!doctype html>
 <body>
 <div class="job-container" th:fragment="uploadCV">
     <div class="title">Upload CV</div>
-    <form th:action="@{/admin/upload-cv/save}" method="post" enctype="multipart/form-data">
+    <form th:action="@{/applicant/save}" method="post" enctype="multipart/form-data">
         <div class="user-details">
             <div class="input-box">
                 <span class="details">Full Name</span>
@@ -21,18 +21,18 @@ l<!doctype html>
                 <input type="text" name="mobile" placeholder="Enter Mobile Number" required />
             </div>
             <div class="input-box">
-                <span class="details">Current Location</span>
-                <input type="text" name="currentLocation" placeholder="Current Location" required />
+                <span class="details">Email</span>
+                <input type="text" name="email" placeholder="Department" required />
             </div>
             <div class="input-box">
-                <span class="details">Department</span>
-                <input type="text" name="department" placeholder="Department" required />
+                <span class="details">Current Location</span>
+                <input type="text" name="currentLocation" placeholder="Current Location" required />
             </div>
             <div class="input-box">
                 <span class="details">Industry Sector</span>
                 <!-- <input type="text" placeholder="Enter Your Name" required /> -->
                 <div class="select-box">
-                    <select name="sector" id="">
+                    <select name="industry" id="">
                         <option value="Automobile">Automobile</option>
                         <option value="Manufacture">Manufacture</option>
                         <option value="Pharma Industry">Pharma Industry</option>
@@ -48,11 +48,19 @@ l<!doctype html>
             </div>
             <div class="input-box">
                 <span class="details">Current Salary</span>
-                <input type="text" name="salary" placeholder="Current Salary" required />
+                <input type="text" name="currentSalary" placeholder="Current Salary" required />
             </div>
             <div class="input-box">
                 <span class="details">Notice Period</span>
-                <input type="text" name="noticePeriod" placeholder="Notice Period" required />
+                <div class="select-box">
+                    <select name="noticePeriod">
+                        <option value="15 Days or Less">15 Days or Less</option>
+                        <option value="1 Month">1 Month</option>
+                        <option value="2 Month">2 Month</option>
+                        <option value="3 Month">3 Month</option>
+                        <option value="More than 3 Month">More than 3 Month</option>
+                    </select>
+                </div>
             </div>
 <!--            <div class="gender-details">-->
 <!--                <input type="radio" name="gender" id="dot-1" />-->
@@ -88,7 +96,7 @@ l<!doctype html>
                   <i class="far fa-check-circle text-success"></i>
                 </span>
                     </button>
-                    <input type="file" name="pdfFile" id="selectfile" />
+                    <input type="file" name="file" id="selectfile" />
                 </div>
             </div>
         </div>

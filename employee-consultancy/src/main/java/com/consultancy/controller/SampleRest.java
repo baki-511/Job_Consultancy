@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 @RestController
-@RequestMapping("/rest")
+@RequestMapping("/admin")
 public class SampleRest {
     @Autowired
     private ResumeService resumeService;
@@ -22,22 +22,9 @@ public class SampleRest {
         return new ResponseEntity<>("File Uploaded Successfully : " + file.getOriginalFilename(), HttpStatus.OK);
     }
     
-//    @GetMapping("/download/{id}")
-//    public ResponseEntity<byte[]> downloadFile(@PathVariable Long resumeId) {
-//        Resume resumeById = resumeService.getResumeById(resumeId);
-//        System.out.println(resumeById);
-//        return ResponseEntity.ok()
-//                .contentType(MediaType.parseMediaType(resumeById.getFileType()))
-//                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + resumeById.getFileName() + "\"")
-//                .body(resumeById.getData());
-//    }
-    
-    @GetMapping("/download/{id}")
+    @GetMapping("/resume/download/{id}")
     public ResponseEntity<byte[]> downloadFile(@PathVariable Long id) {
-        System.out.println("1");
         Resume fileEntity = resumeService.getResumeById(id);
-        System.out.println(fileEntity);
-        System.out.println("2");
         return ResponseEntity.ok()
                 .contentType(MediaType.parseMediaType(fileEntity.getFileType()))
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + fileEntity.getFileName() + "\"")

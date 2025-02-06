@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
-@RequestMapping("/contact")
+//@RequestMapping("/contact")
 public class ContactUsController {
     @Autowired
     private ContactUsService contactUsService;
@@ -21,13 +21,13 @@ public class ContactUsController {
     @Autowired
     private ServicesService servicesService;
     
-    @GetMapping("")
+    @GetMapping("/contact")
     public String contactUs(Model model) {
         model.addAttribute("services", servicesService.getAllServices());
         return "/pages/contact";
     }
    
-    @PostMapping("/save")
+    @PostMapping("/contact/save")
     public String saveContact(@ModelAttribute ContactUs contactUs, RedirectAttributes redirectAttributes) {
         ContactUs savedContactUs = contactUsService.addContactUs(contactUs);
         if (savedContactUs != null) {
