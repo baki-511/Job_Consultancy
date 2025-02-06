@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<footer th:fragment="footer">
+    <div class="container">
+        <div class="sec aboutus">
+            <h2>
+                <img src="/user/img/logo.png" style="width: 170px; height: 70px;"  alt="logo"/>
+            </h2>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Consequatur sit tempore doloribus quibusdam nesciunt quia, magnam
+                reprehenderit laboriosam cumque sint!
+            </p>
+            <!--            <ul class="sci">-->
+            <!--                <li>-->
+            <!--                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>-->
+            <!--                </li>-->
+            <!--                <li>-->
+            <!--                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>-->
+            <!--                </li>-->
+            <!--                <li>-->
+            <!--                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>-->
+            <!--                </li>-->
+            <!--                <li>-->
+            <!--                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>-->
+            <!--                </li>-->
+            <!--            </ul>-->
+        </div>
+        <div class="sec quicklinks">
+            <h2>Our Links</h2>
+            <ul>
+                <li><a th:href="@{/}">Home</a></li>
+                <li><a th:href="@{/about}">About</a></li>
+                <li><a th:href="@{/blog}">Blogs</a></li>
+                <li><a th:href="@{/contact}">Contact us</a></li>
+            </ul>
+        </div>
+        <div class="sec quicklinks">
+            <h2>Services</h2>
+            <ul>
+<!--                <li th:each="service : ${services}">-->
+<!--                    <a th:href="@{'/service/'+${service.serviceId}}" th:text="${service.title}">Men</a>-->
+<!--                </li>-->
+                                <li><a href="">Service 1</a></li>
+                                <li><a href="">Service 2</a></li>
+                                <li><a href="">Service 3</a></li>
+            </ul>
+        </div>
+        <div class="sec contact">
+            <h2>Contact Us</h2>
+            <ul class="info">
+                <li>
+              <span>
+                <i class="fa-solid fa-phone"></i>
+              </span>
+                    <p><a href="tel:+1 134 348 493">+1 134 348 493</a></p>
+                </li>
+                <li>
+              <span>
+                <i class="fa-solid fa-envelope"></i>
+              </span>
+                    <p><a href="mailto:abc@gmaill.com">abc@gmaill.com</a></p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="copyrightText" style="width:100%;">
+        <p>Website Design-Development and Maintenance by <span style="color:#fc5a1b">Swapra Technologies</span></p>
+    </div>
+</footer>
+</body>
+</html>

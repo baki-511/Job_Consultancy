@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Job Consultancy</title>
+    <!--    Common Css-->
+    <div th:replace="~{common :: common(~{::link})}"></div>
+<!--    <link rel="stylesheet" th:href="@{/user/css/counter.css}">-->
+    <link rel="stylesheet" th:href=@{/user/css/banner.css}>
+    <link rel="stylesheet" th:href=@{/user/css/services.css}>
+    <link rel="stylesheet" th:href="@{/user/css/career.css}">
+
+</head>
+<body>
+
+
+<!--Header Section-->
+<div th:replace="~{components/navbar :: navbar}"></div>
+
+<!--Banner Section-->
+<div th:replace="~{components/banner :: banner}"></div>
+
+<!-- About Section -->
+<!--<div th:insert="~{components/common :: head-title('About Us', 'About Our Company')}"></div>-->
+<div th:replace="~{components/about :: about}"></div>
+
+
+<div th:replace="~{components/services :: services}"></div>
+
+
+<div th:replace="~{components/testimonial :: testimonial}"></div>
+
+<!--&lt;!&ndash; Edge Section &ndash;&gt;-->
+<!--<div th:insert="~{components/common :: head-title2('The services that we offer are designed to endow Real Estate developers with an unprecedented set of competitive advantages with which they-->
+<!--can achieve higher profitability and operational scalability.', 'Our Edge')}    "></div>-->
+<!--<div th:replace="~{components/service-slide :: service-slide}"></div>-->
+
+<!--&lt;!&ndash; Counter Section &ndash;&gt;-->
+<!--<div th:replace="~{components/counters :: counters}"></div>-->
+
+<!--&lt;!&ndash;Logo Slider&ndash;&gt;-->
+<!--<div th:insert="~{components/common :: head-title('', 'Our Clients')}"></div>-->
+<!--<div th:replace="~{components/logo-slider :: logo-slider}"></div>-->
+
+<!--&lt;!&ndash;Testimonial Slider&ndash;&gt;-->
+<!--<div th:insert="~{components/common :: head-title('Testimonials', 'What Our Clients Have to Say')}"></div>-->
+<!--<div th:replace="~{components/testimonial :: testimonial}"></div>-->
+
+<!--&lt;!&ndash;Logo Slider&ndash;&gt;-->
+<!--<div th:insert="~{components/common :: head-title('', 'Our Expertise')}"></div>-->
+<!--<div th:replace="~{components/expertise :: expertise}"></div>-->
+
+<!-- Footer Section -->
+<div th:replace="~{components/footer :: footer}"></div>
+
+
+<!-- Common Js -->
+<div th:replace="~{common :: common_js(~{::script})}"></div>
+<script th:src=@{/user/js/banner.js}></script>
+
+
+</body>
+</html>

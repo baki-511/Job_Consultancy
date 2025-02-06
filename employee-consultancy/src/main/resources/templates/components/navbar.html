@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div class="nav-container" th:fragment="navbar">
+    <div class="nav-logo">
+        <a th:href="@{/}">
+            <img src="/user/img/logo.png" alt="" />
+        </a>
+    </div>
+    <i class="fa-solid fa-bars open-menu"></i>
+    <div class="background"></div>
+    <div class="nav-links-container">
+        <i class="fa-solid fa-xmark close-menu"></i>
+        <ul class="nav-links">
+            <li class="nav-link-item">
+                <a th:href="@{/home}">Home</a>
+            </li>
+            <li class="nav-link-item">
+                <a th:href="@{/about}">About Us</a>
+            </li>
+            <li class="nav-link-item dropdown-menu-branch">
+                <a href="" data-toggle="dropdown-menu">Services <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-menu-item"><a href="">Service 1</a></li>
+                    <li class="dropdown-menu-item"><a href="">Service 2</a></li>
+                    <li class="dropdown-menu-item"><a href="">Service 3</a></li>
+                    <li class="dropdown-menu-item"><a href="">Service 4</a></li>
+                </ul>
+            </li>
+            <li class="nav-link-item">
+                <a th:href="@{/career}">Jobs</a>
+            </li>
+<!--            <li class="nav-link-item">-->
+<!--                <a th:href="@{/rest/download/1}">Download</a>-->
+<!--            </li>-->
+            <li class="nav-link-item">
+                <a th:href="@{/upload-cv}">Upload CV</a>
+            </li>
+            <li class="nav-link-item">
+                <a th:href="@{/contact}">Contact Us</a>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
