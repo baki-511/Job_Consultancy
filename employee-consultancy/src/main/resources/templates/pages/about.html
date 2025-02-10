@@ -18,7 +18,11 @@
 <!--Header Section-->
 <div th:replace="~{components/navbar :: navbar}"></div>
 
+<div th:insert="~{components/common :: section-head('About Us','/about', 'About Us')}"></div>
 <div th:replace="~{components/about :: about}"></div>
+
+<div th:insert="~{components/common :: head-title('Testimonial', 'What our Client Have to Say')}"></div>
+<div th:replace="~{components/testimonial :: testimonial}"></div>
 
 <!-- Footer Section -->
 <div th:replace="~{components/footer :: footer}"></div>

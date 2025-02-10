@@ -19,7 +19,7 @@
 <div class="main-content">
     <header th:replace="~{admin/components/header :: header}"></header>
     <main>
-        <div class="container">
+        <div class="">
             <!--Float Msg-->
             <div th:replace="~{admin/components/float-msg :: toast}"></div>
             <h2 class="text-center py-3 bg-light">All Applications</h2>
@@ -27,17 +27,17 @@
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
-                        <tr class="py-3 fs-5 bg-success text-light">
+                        <tr class="py-3 bg-success text-light">
                             <th scope="col">ID</th>
                             <th scope="col" class="text-nowrap">Full Name</th>
                             <th scope="col">Mobile</th>
                             <th scope="col">Email</th>
-                            <th scope="col">Current Location</th>
+                            <th scope="col" class="text-nowrap">Current Location</th>
                             <th scope="col">Industry</th>
                             <th scope="col">Experience</th>
-                            <th scope="col">Current Salary</th>
+                            <th scope="col" class="text-nowrap">Current Salary</th>
                             <th scope="col">Notice Period</th>
-                            <th scope="col">Action</th>
+                            <th scope="col">Resume</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -45,12 +45,12 @@
                             <td class="text-nowrap px-2" th:text="${iterStat.index + 1}"></td>
                             <td class="text-nowrap px-2" th:text="${resume.fullName}"></td>
                             <td class="text-nowrap px-2" th:text="${resume.mobile}"></td>
-                            <td class="px-2" th:text="${resume.email}"></td>
-                            <td class="px-2" th:text="${resume.currentLocation}"></td>
-                            <td class="px-2" th:text="${resume.industry}"></td>
-                            <td class="px-2" th:text="${resume.experience}"></td>
-                            <td class="px-2" th:text="${resume.currentSalary}"></td>
-                            <td class="px-2" th:text="${resume.noticePeriod}"></td>
+                            <td class="text-nowrap px-2" th:text="${resume.email}"></td>
+                            <td class="text-nowrap px-2" th:text="${resume.currentLocation}"></td>
+                            <td class="text-nowrap px-2" th:text="${resume.industry}"></td>
+                            <td class="text-nowrap px-2" th:text="${resume.experience}"></td>
+                            <td class="text-nowrap px-2" th:text="${resume.currentSalary}"></td>
+                            <td class="text-nowrap px-2" th:text="${resume.noticePeriod}"></td>
 
                             <td class="text-nowrap px-2">
                                 <a th:href="@{'/admin/resume/download/'+ ${resume.applicantId}}" class="btn">

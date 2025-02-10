@@ -34,7 +34,10 @@ public class AdminServiceController {
     public String addServices(@ModelAttribute Services services,
                               @RequestParam("imageFile") MultipartFile imageFile,
                               RedirectAttributes redirectAttributes) {
+        System.out.println("1");
+        System.out.println(imageFile.getSize());
         Services addedService = servicesService.addService(services, imageFile);
+        System.out.println("2");
         if (addedService != null) {
             redirectAttributes.addFlashAttribute("message", "Saved Successfully!");
         }
