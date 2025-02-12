@@ -1,0 +1,118 @@
+l<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div class="job-container" th:fragment="jobForm">
+    <div class="title">Upload Resume</div>
+    <form th:action="@{/applicant/save}" method="post" enctype="multipart/form-data">
+        <div class="user-details">
+            <div class="input-box">
+                <input type="text" name="jobPostName" readonly />
+            </div>
+            <div class="input-box">
+                <span class="details">Full Name</span>
+                <input type="text" name="fullName" placeholder="Enter Your Name" required />
+            </div>
+            <div class="input-box">
+                <span class="details">Mobile Number</span>
+                <input type="text" name="mobile" placeholder="Enter Mobile Number" required />
+            </div>
+            <div class="input-box">
+                <span class="details">Email</span>
+                <input type="text" name="email" placeholder="Department" required />
+            </div>
+            <div class="input-box">
+                <span class="details">Current Location</span>
+                <input type="text" name="currentLocation" placeholder="Current Location" required />
+            </div>
+<!--            <div class="input-box">-->
+<!--                <span class="details">Industry Sector</span>-->
+<!--                &lt;!&ndash; <input type="text" placeholder="Enter Your Name" required /> &ndash;&gt;-->
+<!--                <div class="select-box">-->
+<!--                    <select name="industry" id="">-->
+<!--                        <option value="Automobile">Automobile</option>-->
+<!--                        <option value="Manufacture">Manufacture</option>-->
+<!--                        <option value="Pharma Industry">Pharma Industry</option>-->
+<!--                        <option value="IT Sector">IT Sector</option>-->
+<!--                        <option value="Electronics Sector">Electronics Sector</option>-->
+<!--                        <option value="Sales & Marketing">Sales & Marketing</option>-->
+<!--                    </select>-->
+<!--                </div>-->
+<!--            </div>-->
+            <div class="input-box">
+                <span class="details">Experience</span>
+                <input type="text" name="experience" placeholder="Enter Experience" required />
+            </div>
+            <div class="input-box">
+                <span class="details">Current Salary</span>
+                <input type="text" name="currentSalary" placeholder="Current Salary" required />
+            </div>
+            <div class="input-box">
+                <span class="details">Expected Salary</span>
+                <input type="text" name="expectedSalary" placeholder="Expected Salary" required />
+            </div>
+            <div class="input-box">
+                <span class="details">Notice Period</span>
+                <div class="select-box">
+                    <select name="noticePeriod">
+                        <option value="15 Days or Less">15 Days or Less</option>
+                        <option value="1 Month">1 Month</option>
+                        <option value="2 Month">2 Month</option>
+                        <option value="3 Month">3 Month</option>
+                        <option value="More than 3 Month">More than 3 Month</option>
+                    </select>
+                </div>
+            </div>
+<!--            <div class="gender-details">-->
+<!--                <input type="radio" name="gender" id="dot-1" />-->
+<!--                <input type="radio" name="gender" id="dot-2" />-->
+<!--                <input type="radio" name="gender" id="dot-3" />-->
+<!--                <div class="gender-title">Gender</div>-->
+<!--                <div class="category">-->
+<!--                    <label for="dot-1">-->
+<!--                        <span class="dot one"></span>-->
+<!--                        <span class="gender">Male</span>-->
+<!--                    </label>-->
+<!--                    <label for="dot-2">-->
+<!--                        <span class="dot two"></span>-->
+<!--                        <span class="gender">Female</span>-->
+<!--                    </label>-->
+<!--                    <label for="dot-3">-->
+<!--                        <span class="dot three"></span>-->
+<!--                        <span class="gender">Trans</span>-->
+<!--                    </label>-->
+<!--                </div>-->
+<!--            </div>-->
+            <div class="file-wrapper">
+                <div class="upload-btn-wrapper">
+                    <button class="btn upload-file font-weight-500">
+                <span class="upload-btn">
+                  <i class="fas fa-cloud-upload-alt d-block font-50 pb-2"></i>
+                  Upload Resume
+                </span>
+                        <span class="upload-select-button" id="blankFile">
+                  Resume size must be less than 5mb
+                </span>
+                        <span class="success">
+                  <i class="far fa-check-circle text-success"></i>
+                </span>
+                    </button>
+                    <input type="file" name="file" id="selectfile" />
+                </div>
+            </div>
+        </div>
+        <div class="button">
+            <input type="submit" value="SUBMIT" />
+        </div>
+    </form>
+</div>
+
+
+</body>
+</html>

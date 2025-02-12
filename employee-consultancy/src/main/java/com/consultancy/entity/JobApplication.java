@@ -9,6 +9,8 @@ public class JobApplication {
     private Integer jobApplicationId;
     private String applicantName;
     private String mobile;
+    private String email;
+    private Double experience;
     private String noticePeriod;
     private String currentSalary;
     private String expectedSalary;
@@ -19,6 +21,7 @@ public class JobApplication {
     private JobPost jobPost;
     
     @OneToOne
+    @JoinColumn(name = "resume_id")
     private Resume resume;
     
     public JobApplication() {
@@ -34,6 +37,20 @@ public class JobApplication {
         this.expectedSalary = expectedSalary;
         this.currentLocation = currentLocation;
         this.jobPost = jobPost;
+    }
+    
+    public JobApplication(Integer jobApplicationId, String applicantName, String mobile, String email, Double experience, String noticePeriod, String currentSalary, String expectedSalary, String currentLocation, JobPost jobPost, Resume resume) {
+        this.jobApplicationId = jobApplicationId;
+        this.applicantName = applicantName;
+        this.mobile = mobile;
+        this.email = email;
+        this.experience = experience;
+        this.noticePeriod = noticePeriod;
+        this.currentSalary = currentSalary;
+        this.expectedSalary = expectedSalary;
+        this.currentLocation = currentLocation;
+        this.jobPost = jobPost;
+        this.resume = resume;
     }
     
     public JobApplication(Integer jobApplicationId, String applicantName, String mobile, String noticePeriod,
@@ -94,6 +111,22 @@ public class JobApplication {
         return expectedSalary;
     }
     
+    public String getEmail() {
+        return email;
+    }
+    
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    
+    public Double getExperience() {
+        return experience;
+    }
+    
+    public void setExperience(Double experience) {
+        this.experience = experience;
+    }
+    
     public void setExpectedSalary(String expectedSalary) {
         this.expectedSalary = expectedSalary;
     }
@@ -128,11 +161,12 @@ public class JobApplication {
                 "jobApplicationId=" + jobApplicationId +
                 ", applicantName='" + applicantName + '\'' +
                 ", mobile='" + mobile + '\'' +
+                ", email='" + email + '\'' +
+                ", experience=" + experience +
                 ", noticePeriod='" + noticePeriod + '\'' +
                 ", currentSalary='" + currentSalary + '\'' +
                 ", expectedSalary='" + expectedSalary + '\'' +
                 ", currentLocation='" + currentLocation + '\'' +
-                ", jobPost=" + jobPost +
                 '}';
     }
 }

@@ -10,7 +10,7 @@ public class ApplicantDto {
     private String email;
     private String currentLocation;
     private String industry;
-    private Integer experience;
+    private Double experience;
     private String currentSalary;
     private String noticePeriod;
     @Lob
@@ -18,7 +18,7 @@ public class ApplicantDto {
     private byte[] data;
     
     public ApplicantDto(Long applicantId, String fullName, String mobile, String email, String currentLocation,
-                        String industry, Integer experience, String currentSalary, String noticePeriod, byte[] data) {
+                        String industry, Double experience, String currentSalary, String noticePeriod, byte[] data) {
         this.applicantId = applicantId;
         this.fullName = fullName;
         this.mobile = mobile;
@@ -82,11 +82,11 @@ public class ApplicantDto {
         this.industry = industry;
     }
     
-    public Integer getExperience() {
+    public Double getExperience() {
         return experience;
     }
     
-    public void setExperience(Integer experience) {
+    public void setExperience(Double experience) {
         this.experience = experience;
     }
     

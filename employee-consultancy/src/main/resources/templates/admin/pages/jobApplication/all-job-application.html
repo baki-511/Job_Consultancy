@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Job Consultancy</title>
+    <title>Admin all Job Applications</title>
     <!--    Common Css-->
     <div th:replace="~{admin/common :: common(~{::link})}"></div>
 </head>
@@ -22,7 +22,7 @@
         <div class="">
             <!--Float Msg-->
             <div th:replace="~{admin/components/float-msg :: toast}"></div>
-            <h2 class="text-center py-3 bg-light">All Applications</h2>
+            <h2 class="text-center py-3 bg-light">All Job Applications</h2>
             <div class="card" >
                 <div class="table-responsive">
                     <table class="table">
@@ -33,27 +33,29 @@
                             <th scope="col">Mobile</th>
                             <th scope="col">Email</th>
                             <th scope="col" class="text-nowrap">Current Location</th>
-                            <th scope="col">Industry</th>
+                            <th scope="col" class="text-nowrap text-center">Job Post</th>
                             <th scope="col">Experience</th>
                             <th scope="col" class="text-nowrap">Current Salary</th>
+                            <th scope="col" class="text-nowrap">Expected Salary</th>
                             <th scope="col">Notice Period</th>
                             <th scope="col">Resume</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr th:each="resume, iterStat : ${resumes.content}" class="py-3">
+                        <tr th:each="jobApp, iterStat : ${jobApps.content}" class="py-3">
                             <td class="text-nowrap px-2" th:text="${iterStat.index + 1}"></td>
-                            <td class="text-nowrap px-2" th:text="${resume.fullName}"></td>
-                            <td class="text-nowrap px-2" th:text="${resume.mobile}"></td>
-                            <td class="text-nowrap px-2" th:text="${resume.email}"></td>
-                            <td class="text-nowrap px-2" th:text="${resume.currentLocation}"></td>
-                            <td class="text-nowrap px-2" th:text="${resume.industry}"></td>
-                            <td class="text-nowrap px-2" th:text="${resume.experience}"></td>
-                            <td class="text-nowrap px-2" th:text="${resume.currentSalary}"></td>
-                            <td class="text-nowrap px-2" th:text="${resume.noticePeriod}"></td>
+                            <td class="text-nowrap px-2" th:text="${jobApp.applicantName}"></td>
+                            <td class="text-nowrap px-2" th:text="${jobApp.mobile}"></td>
+                            <td class="text-nowrap px-2" th:text="${jobApp.email}"></td>
+                            <td class="text-nowrap px-2" th:text="${jobApp.currentLocation}"></td>
+                            <td class="text-nowrap px-2" th:text="${jobApp.jobPost.jobTitle}"></td>
+                            <td class="text-nowrap text-center px-2" th:text="${jobApp.experience}"></td>
+                            <td class="text-nowrap text-center px-2" th:text="${jobApp.currentSalary}"></td>
+                            <td class="text-nowrap text-center px-2" th:text="${jobApp.expectedSalary}"></td>
+                            <td class="text-nowrap px-2" th:text="${jobApp.noticePeriod}"></td>
 
                             <td class="text-nowrap px-2">
-                                <a th:href="@{'/admin/resume/download/'+ ${resume.applicantId}}" class="btn">
+                                <a th:href="@{'/admin/resume/download/'+ ${jobApp.jobApplicationId}}" class="btn">
                                     <i class="fa-solid fa-download" style="color:blue;"></i></a>
                             </td>
                         </tr>
@@ -62,13 +64,13 @@
                     <nav aria-label="Page navigation example">
                         <ul class="pagination">
                             <li th:if="${currentPage!=0}" class="page-item">
-                                <a class="page-link" th:href="@{|/admin/resumes/all/${currentPage - 1}?size=${size}|}">Prev</a>
+                                <a class="page-link" th:href="@{|/admin/job-apps/all/${currentPage - 1}?size=${size}|}">Prev</a>
                             </li>
                             <li th:each="i:${#numbers.sequence(1,totalPages)}" th:classappend="${currentPage == (i-1) ? 'active': ''}" class="page-item">
-                                <a class="page-link" th:href="@{|/admin/resumes/all/${i - 1}?size=${size}|}">[[${i}]]</a>
+                                <a class="page-link" th:href="@{|/admin/job-apps/all/${i - 1}?size=${size}|}">[[${i}]]</a>
                             </li>
                             <li th:if="${currentPage + 1!=totalPages}" class="page-item">
-                                <a class="page-link" th:href="@{|/admin/resumes/all/${currentPage + 1}?size=${size}|}">Next</a>
+                                <a class="page-link" th:href="@{|/admin/job-apps/all/${currentPage + 1}?size=${size}|}">Next</a>
                             </li>
                         </ul>
                     </nav>

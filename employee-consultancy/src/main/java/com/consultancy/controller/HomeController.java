@@ -35,11 +35,7 @@ public class HomeController {
         return "login";
     }
     
-    @GetMapping("/career")
-    public String career() {
-        return "/pages/career";
-    }
-    
+
     @GetMapping("/about")
     public String about(Model model) {
         model.addAttribute("testimonials", testimonialService.getAllTestimonial());
@@ -51,24 +47,19 @@ public class HomeController {
         return "/pages/service";
     }
     
-    
-//    @GetMapping("/download/{id}")
-//    public String downloadFile(@PathVariable Long resumeId, HttpServletResponse response) throws IOException {
-//        Resume resumeById = resumeService.getResumeById(resumeId);
-//
-//        response.setContentType(resumeById.getFileType());
-//        response.setHeader("Content-Disposition", "attachment; filename=\"" + resumeById.getFileName() + "\"");
-//        response.getOutputStream().write(resumeById.getData());
-//        response.getOutputStream().flush();
-//
-//        return "redirect:/home";
-//    }
-    
+    @GetMapping("/test3")
+    public String test3() {
+        return "/pages/jobForm";
+    }
     @GetMapping("/test2")
     public String test2() {
         return "redirect:/home";
     }
-
+    
+    @GetMapping("/boot")
+    public String bootTest1() {
+        return "/pages/bootstrap1";
+    }
     
 //    @GetMapping("/contact")
 //    public String contactUs() {

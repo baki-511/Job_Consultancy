@@ -4,8 +4,11 @@ import com.consultancy.entity.JobPost;
 
 public class JobApplicationDto {
     private Integer jobApplicationId;
+    private String jobPostName;
     private String applicantName;
     private String mobile;
+    private String email;
+    private Double experience;
     private String noticePeriod;
     private String currentSalary;
     private String expectedSalary;
@@ -40,12 +43,34 @@ public class JobApplicationDto {
         this.jobPost = jobPost;
     }
     
+    public JobApplicationDto(Integer jobApplicationId, String jobPostName, String applicantName, String mobile, String email, Double experience, String noticePeriod, String currentSalary, String expectedSalary, String currentLocation, JobPost jobPost) {
+        this.jobApplicationId = jobApplicationId;
+        this.jobPostName = jobPostName;
+        this.applicantName = applicantName;
+        this.mobile = mobile;
+        this.email = email;
+        this.experience = experience;
+        this.noticePeriod = noticePeriod;
+        this.currentSalary = currentSalary;
+        this.expectedSalary = expectedSalary;
+        this.currentLocation = currentLocation;
+        this.jobPost = jobPost;
+    }
+    
     public Integer getJobApplicationId() {
         return jobApplicationId;
     }
     
     public void setJobApplicationId(Integer jobApplicationId) {
         this.jobApplicationId = jobApplicationId;
+    }
+    
+    public String getJobPostName() {
+        return jobPostName;
+    }
+    
+    public void setJobPostName(String jobPostName) {
+        this.jobPostName = jobPostName;
     }
     
     public String getApplicantName() {
@@ -58,6 +83,22 @@ public class JobApplicationDto {
     
     public String getMobile() {
         return mobile;
+    }
+    
+    public String getEmail() {
+        return email;
+    }
+    
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    
+    public Double getExperience() {
+        return experience;
+    }
+    
+    public void setExperience(Double experience) {
+        this.experience = experience;
     }
     
     public void setMobile(String mobile) {
@@ -116,6 +157,7 @@ public class JobApplicationDto {
     public String toString() {
         return "JobApplicationDto{" +
                 "jobApplicationId=" + jobApplicationId +
+                ", jobPostName='" + jobPostName + '\'' +
                 ", applicantName='" + applicantName + '\'' +
                 ", mobile='" + mobile + '\'' +
                 ", noticePeriod='" + noticePeriod + '\'' +

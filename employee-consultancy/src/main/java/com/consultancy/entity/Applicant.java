@@ -12,7 +12,7 @@ public class Applicant {
     private String email;
     private String currentLocation;
     private String industry;
-    private Integer experience;
+    private Double experience;
     private String currentSalary;
     private String noticePeriod;
     
@@ -24,7 +24,7 @@ public class Applicant {
     }
     
     public Applicant(Long applicantId, String fullName, String mobile, String email, String currentLocation,
-                     String industry, Integer experience, String currentSalary, String noticePeriod, Resume resume) {
+                     String industry, Double experience, String currentSalary, String noticePeriod, Resume resume) {
         this.applicantId = applicantId;
         this.fullName = fullName;
         this.mobile = mobile;
@@ -85,11 +85,11 @@ public class Applicant {
         this.industry = industry;
     }
     
-    public Integer getExperience() {
+    public Double getExperience() {
         return experience;
     }
     
-    public void setExperience(Integer experience) {
+    public void setExperience(Double experience) {
         this.experience = experience;
     }
     

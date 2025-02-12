@@ -9,99 +9,30 @@ z<!doctype html>
 </head>
 <body>
 <div class="career-sec" th:fragment="career">
+    <div class="job-types">
+        <a th:href="@{|/career?jobType=All|}"><button class="job-type active">All</button></a>
+        <a th:href="@{|/career?jobType=Full Time|}"><button class="job-type ">Full Time</button></a>
+        <a th:href="@{|/career?jobType=Part Time|}"><button class="job-type ">Part Time</button></a>
+        <div class="line"></div>
+    </div>
+
+
     <div class="career-container">
         <!-- Career 1 -->
-        <div class="career-box">
-            <span>Full Time</span>
-
+        <div class="career-box" th:each="jobPost : ${jobPosts}">
+            <span th:text="${jobPost.employmentStatus}">Full Time</span>
             <div class="career-title">
-                <h3>Assistant Manager</h3>
-                <p>Hinjewadi, Pune</p>
+                <h3 th:text="${jobPost.jobTitle}">Assistant Manager</h3>
+                <p><i class="fa-solid fa-location-dot" style="margin-right: 10px"></i>[[${jobPost.location}]]</p>
+                <p><i class="fa-solid fa-money-check-dollar" style="margin-right: 10px"></i>[[${jobPost.salary}]]</p>
             </div>
             <div class="career-desc">
-                <p>
+                <p th:text="${jobPost.jobDescription}">
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem,
                     molestias aliquam harum praesentium doloremque corporis?
                 </p>
             </div>
-            <a href="#" class="apply-btn">Apply Now</a>
-        </div>
-        <!-- Career 2 -->
-        <div class="career-box">
-            <span>Part Time</span>
-            <div class="career-title">
-                <h3>Pre - Sales Associate</h3>
-                <p>Hinjewadi, Pune</p>
-            </div>
-            <div class="career-desc">
-                <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem,
-                    molestias aliquam harum praesentium doloremque corporis?
-                </p>
-            </div>
-            <a href="#" class="apply-btn">Apply Now</a>
-        </div>
-        <!-- Career 1 -->
-        <div class="career-box">
-            <span>Full Time</span>
-
-            <div class="career-title">
-                <h3>Assistant Manager</h3>
-                <p>Hinjewadi, Pune</p>
-            </div>
-            <div class="career-desc">
-                <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem,
-                    molestias aliquam harum praesentium doloremque corporis?
-                </p>
-            </div>
-            <a href="#" class="apply-btn">Apply Now</a>
-        </div>
-        <!-- Career 2 -->
-        <div class="career-box">
-            <span>Part Time</span>
-            <div class="career-title">
-                <h3>Pre - Sales Associate</h3>
-                <p>Hinjewadi, Pune</p>
-            </div>
-            <div class="career-desc">
-                <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem,
-                    molestias aliquam harum praesentium doloremque corporis?
-                </p>
-            </div>
-            <a href="#" class="apply-btn">Apply Now</a>
-        </div>
-        <!-- Career 1 -->
-        <div class="career-box">
-            <span>Full Time</span>
-
-            <div class="career-title">
-                <h3>Assistant Manager</h3>
-                <p>Hinjewadi, Pune</p>
-            </div>
-            <div class="career-desc">
-                <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem,
-                    molestias aliquam harum praesentium doloremque corporis?
-                </p>
-            </div>
-            <a href="#" class="apply-btn">Apply Now</a>
-        </div>
-        <!-- Career 2 -->
-        <div class="career-box">
-            <span>Part Time</span>
-            <div class="career-title">
-                <h3>Pre - Sales Associate</h3>
-                <p>Hinjewadi, Pune</p>
-            </div>
-            <div class="career-desc">
-                <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem,
-                    molestias aliquam harum praesentium doloremque corporis?
-                </p>
-            </div>
-            <a href="#" class="apply-btn">Apply Now</a>
+            <a th:href="@{|/career/job?jobPost=${jobPost.jobTitle}|}" class="apply-btn">Apply Now</a>
         </div>
     </div>
 </div>

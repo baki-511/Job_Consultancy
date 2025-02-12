@@ -2,10 +2,13 @@ package com.consultancy.service.impl;
 
 import com.consultancy.dto.JobApplicationDto;
 import com.consultancy.entity.JobApplication;
+import com.consultancy.entity.JobPost;
 import com.consultancy.entity.Resume;
 import com.consultancy.exception.JobApplicationNotFoundException;
+import com.consultancy.exception.JobPostNotFoundException;
 import com.consultancy.payload.ApiResponse;
 import com.consultancy.repository.JobApplicationRepository;
+import com.consultancy.repository.JobPostRepository;
 import com.consultancy.service.JobApplicationService;
 import com.consultancy.service.ResumeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,11 +23,17 @@ public class JobApplicationServiceImpl implements JobApplicationService {
     private JobApplicationRepository jobApplicationRepository;
     
     @Autowired
+    private JobPostRepository jobPostRepository;
+    
+    @Autowired
     private ResumeService resumeService;
     
     @Override
     public JobApplication addJobApplication(JobApplicationDto jobApplicationDto, MultipartFile file) {
         JobApplication jobApplication = toJobApplication(jobApplicationDto);
+        JobPost jobPost = jobPostRepository.findByJobTitle(jobApplicationDto.getJobPostName())
+                .orElseThrow(() -> new JobPostNotFoundException("Job Post NOT Found!"));
+        jobApplication.setJobPost(jobPost);
         Resume resume = resumeService.addResume(file);
         jobApplication.setResume(resume);
         return jobApplicationRepository.save(jobApplication);
@@ -66,6 +75,8 @@ public class JobApplicationServiceImpl implements JobApplicationService {
         application.setJobApplicationId(jobApplicationDto.getJobApplicationId());
         application.setApplicantName(jobApplicationDto.getApplicantName());
         application.setMobile(jobApplicationDto.getMobile());
+        application.setEmail(jobApplicationDto.getEmail());
+        application.setExperience(jobApplicationDto.getExperience());
         application.setNoticePeriod(jobApplicationDto.getNoticePeriod());
         application.setCurrentSalary(jobApplicationDto.getCurrentSalary());
         application.setExpectedSalary(jobApplicationDto.getExpectedSalary());

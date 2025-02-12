@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Job Consultancy</title>
+    <!--    Common Css-->
+    <div th:replace="~{admin/common :: common(~{::link})}"></div>
+</head>
+<body>
+<input type="checkbox" id="sidebar-toggle">
+<!--Sidebar -->
+<div th:replace="~{admin/components/sidebar :: sidebar}"></div>
+
+
+<!--Main Content -->
+<div class="main-content">
+    <header th:replace="~{admin/components/header :: header}"></header>
+    <main>
+        <div class="container">
+            <div class="card mt-3 col-md-8 offset-md-2  p-2">
+                <h1 class="text-center">Add Job Post</h1>
+                <div class="card-body">
+                    <form th:action="@{/admin/job-post/save}" method="post">
+                        <div class="form-group mb-3">
+                            <label for="name">Job Title</label>
+                            <input type="text" class="form-control" id="name" name="jobTitle" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="salary">Salary</label>
+                            <input type="text" class="form-control" id="salary" name="salary" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="location">Location</label>
+                            <input type="text" class="form-control" id="location" name="location" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label>Employment Status</label>
+                            <select class="form-select" aria-label="Default select example" name="employmentStatus">
+                                <option value="Full Time">Full Time</option>
+                                <option value="Part Time">Part Time</option>
+                            </select>
+<!--                            <input type="text" class="form-control" id="employmentStatus" name="employmentStatus" required>-->
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="description">Job Description</label>
+                            <textarea class="form-control" id="description" rows="6" name="jobDescription" required></textarea>
+                        </div>
+
+                        <button type="submit" class="offset-md-4 btn btn-primary py-2 col-md-4">Add Job Post</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+
+<!--Common Js-->
+<div th:replace="~{admin/common :: common_js(~{::script})}"></div>
+</body>
+</html>
+

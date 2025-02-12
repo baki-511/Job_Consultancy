@@ -28,7 +28,7 @@
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 50px;
     overflow-x: hidden;
-    padding: 5rem 0;
+    padding: 2rem 0;
     margin: auto;
 }
 
@@ -88,6 +88,6 @@
 
 @media (min-width: 992px){
     .row{
-        margin-top: 70px;
+        /* margin-top: 70px; */
     }
 }

@@ -13,6 +13,7 @@ public class JobPost {
     private String salary;
     private String location;
     private String employmentStatus;
+    @Column(length = 1000)
     private String jobDescription;
     
     @OneToMany(mappedBy = "jobPost", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
