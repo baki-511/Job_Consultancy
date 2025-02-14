@@ -30,6 +30,10 @@
                             <input type="text" class="form-control" id="name" name="title" th:value="${service.title}" >
                         </div>
                         <div class="form-group mb-3">
+                            <label for="fontAwesome">Font Awesome Icon </label>
+                            <input type="text" class="form-control" id="fontAwesome" name="fontAwesomeIcon" th:value="${service.fontAwesomeIcon}" required>
+                        </div>
+                        <div class="form-group mb-3">
                             <label for="description">Description</label>
                             <textarea class="form-control" id="description" rows="6" name="description" >[[${service.description}]]</textarea>
                         </div>

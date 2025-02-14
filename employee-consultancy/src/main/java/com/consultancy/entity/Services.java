@@ -9,6 +9,7 @@ public class Services {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long serviceId;
     private String title;
+    private String fontAwesomeIcon;
     @Column(length = 2000)
     private String description;
     
@@ -21,9 +22,10 @@ public class Services {
     public Services() {
     }
     
-    public Services(Long serviceId, String title, String description, String image) {
+    public Services(Long serviceId, String title, String fontAwesomeIcon, String description, String image) {
         this.serviceId = serviceId;
         this.title = title;
+        this.fontAwesomeIcon = fontAwesomeIcon;
         this.description = description;
         this.image = image;
     }
@@ -42,6 +44,14 @@ public class Services {
     
     public void setTitle(String title) {
         this.title = title;
+    }
+    
+    public String getFontAwesomeIcon() {
+        return fontAwesomeIcon;
+    }
+    
+    public void setFontAwesomeIcon(String fontAwesomeIcon) {
+        this.fontAwesomeIcon = fontAwesomeIcon;
     }
     
     public String getDescription() {

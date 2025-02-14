@@ -11,57 +11,57 @@
 <div class="swiper mySwiper" th:fragment="testimonial">
     <div class="swiper-wrapper">
         <!-- <i class="fa-solid fa-quote-left quote-left"></i> -->
-        <div class="swiper-slide">
+        <div class="swiper-slide" th:each="testimonial : ${testimonials}">
             <div class="testimonial">
                 <div class="testimonial-img">
-                    <img src="/user/img/testi1.jpg" alt="" />
+                    <img th:src="|data:image/jpeg;base64,${testimonial.image}|" alt="" />
                 </div>
                 <div class="testimonial-msg">
-                    <p>
+                    <p th:text="${testimonial.description}">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
                         nulla labore, quaerat cumque vitae et fugiat? Adipisci eligendi
                         ut quia!
                     </p>
                 </div>
                 <div class="testimonial-title">
-                    <p>Johny Depp</p>
+                    <p th:text="${testimonial.title}">Johny Depp</p>
                 </div>
             </div>
         </div>
-        <div class="swiper-slide">
-            <div class="testimonial">
-                <div class="testimonial-img">
-                    <img src="/user/img/testi2.jpg" alt="" />
-                </div>
-                <div class="testimonial-msg">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
-                        nulla labore, quaerat cumque vitae et fugiat? Adipisci eligendi
-                        ut quia!
-                    </p>
-                </div>
-                <div class="testimonial-title">
-                    <p>Pravin Sinha</p>
-                </div>
-            </div>
-        </div>
-        <div class="swiper-slide">
-            <div class="testimonial">
-                <div class="testimonial-img">
-                    <img src="/user/img/testi3.jpg" alt="" />
-                </div>
-                <div class="testimonial-msg">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
-                        nulla labore, quaerat cumque vitae et fugiat? Adipisci eligendi
-                        ut quia!
-                    </p>
-                </div>
-                <div class="testimonial-title">
-                    <p>Yogita Saha</p>
-                </div>
-            </div>
-        </div>
+<!--        <div class="swiper-slide">-->
+<!--            <div class="testimonial">-->
+<!--                <div class="testimonial-img">-->
+<!--                    <img src="/user/img/testi2.jpg" alt="" />-->
+<!--                </div>-->
+<!--                <div class="testimonial-msg">-->
+<!--                    <p>-->
+<!--                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum-->
+<!--                        nulla labore, quaerat cumque vitae et fugiat? Adipisci eligendi-->
+<!--                        ut quia!-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--                <div class="testimonial-title">-->
+<!--                    <p>Pravin Sinha</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="swiper-slide">-->
+<!--            <div class="testimonial">-->
+<!--                <div class="testimonial-img">-->
+<!--                    <img src="/user/img/testi3.jpg" alt="" />-->
+<!--                </div>-->
+<!--                <div class="testimonial-msg">-->
+<!--                    <p>-->
+<!--                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum-->
+<!--                        nulla labore, quaerat cumque vitae et fugiat? Adipisci eligendi-->
+<!--                        ut quia!-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--                <div class="testimonial-title">-->
+<!--                    <p>Yogita Saha</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
         <!-- <i class="fa-solid fa-quote-right quote-right"></i> -->
     </div>
 
@@ -69,6 +69,36 @@
     <!-- <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div> -->
     <!-- <div class="swiper-pagination"></div> -->
+</div>
+
+<div class="testimonial-area" th:fragment="testimonial2">
+    <div class="testimonial-container">
+        <!-- <div class="sec-title">
+          <h2>Our Testimonial</h2>
+          <p>What Client Say About Us</p>
+        </div> -->
+        <div class="testimonial-content owl-carousel">
+            <div class="single-testimonial" th:each="testimonial : ${testimonials}">
+                <p th:text="${testimonial.description}">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. In
+                    repellat suscipit sit harum temporibus reprehenderit optio
+                    deserunt quas voluptates doloribus.
+                </p>
+                <div class="client-info">
+                    <div class="client-pic">
+                        <a href="">
+                            <img th:src="|data:image/jpeg;base64,${testimonial.image}|" alt="" />
+                        </a>
+                    </div>
+                    <div class="client-details">
+                        <h6 th:text="${testimonial.title}">Harish Shrivastav</h6>
+                        <span th:text="${testimonial.designation}">Desginer, LLC Team</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </div>
 </body>
 </html>

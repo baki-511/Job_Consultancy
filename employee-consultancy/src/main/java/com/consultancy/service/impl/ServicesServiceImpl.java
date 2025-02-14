@@ -37,6 +37,12 @@ public class ServicesServiceImpl implements ServicesService {
     }
     
     @Override
+    public Services getServiceByTitle(String serviceTitle) {
+        return servicesRepository.findByTitle(serviceTitle)
+                .orElseThrow(() -> new ServiceNotFoundException("Service NOT Found with Title : " + serviceTitle));
+    }
+    
+    @Override
     public ApiResponse deleteServiceById(Long serviceId) {
         Services serviceById = getServiceById(serviceId);
         servicesRepository.delete(serviceById);

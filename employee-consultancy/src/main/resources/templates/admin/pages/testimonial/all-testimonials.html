@@ -30,6 +30,7 @@
                         <tr class="py-3 fs-5 bg-success text-light">
                             <th scope="col">ID</th>
                             <th scope="col" class="text-nowrap">Testimonial Name</th>
+                            <th scope="col" class="text-nowrap">Designation</th>
                             <th scope="col" class="desc">Description</th>
                             <th scope="col">Image</th>
                             <th scope="col">Action</th>
@@ -39,6 +40,7 @@
                         <tr th:each="testimonial, iterStat : ${testimonials.content}" class="py-3">
                             <td class="text-nowrap px-2" th:text="${iterStat.index + 1}"></td>
                             <td class="text-nowrap px-2" th:text="${testimonial.title}"></td>
+                            <td class="text-nowrap px-2" th:text="${testimonial.designation}"></td>
                             <td class="" th:text="${testimonial.description}"></td>
                             <td class="text-nowrap px-2" style="min-width:200px">
                                 <img alt="" width="200" height="160" th:src="|data:image/jpeg;base64,${testimonial.image}|" class="img-thumbnail">

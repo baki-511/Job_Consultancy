@@ -9,14 +9,12 @@
     <!--    Common Css-->
     <div th:replace="~{common :: common(~{::link})}"></div>
 <!--    <link rel="stylesheet" th:href="@{/user/css/counter.css}">-->
+    <link rel="stylesheet" th:href=@{/user/css/about.css}>
     <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
     />
-    <link rel="stylesheet" th:href=@{/user/css/banner.css}>
-    <link rel="stylesheet" th:href=@{/user/css/services.css}>
-<!--    <link rel="stylesheet" th:href="@{/user/css/career.css}">-->
-
+    <link rel="stylesheet" th:href="@{/user/css/testimonial2.css}">
 </head>
 <body>
 
@@ -24,15 +22,8 @@
 <!--Header Section-->
 <div th:replace="~{components/navbar :: navbar}"></div>
 
-<!--Banner Section-->
-<div th:replace="~{components/banner :: banner}"></div>
-
-<!-- About Section -->
-<div th:insert="~{components/common :: head-title('About Us', 'About Our Company')}"></div>
-<div th:replace="~{components/about :: about}"></div>
-
-<div th:replace="~{components/services :: services}"></div>
-
+<div th:insert="~{components/common :: section-head(${service.title},'/about', '')}"></div>
+<div th:replace="~{components/serviceInfo :: serviceInfo}"></div>
 
 <div th:insert="~{components/common :: head-title('Testimonial', 'What our Client Have to Say')}"></div>
 <div th:replace="~{components/testimonial :: testimonial2}"></div>
@@ -45,5 +36,6 @@
 <div th:replace="~{common :: common_js(~{::script})}"></div>
 <script th:src=@{/user/js/banner.js}></script>
 <script th:src=@{/user/js/testimonial2.js}></script>
+
 </body>
 </html>

@@ -10,6 +10,12 @@
     <div th:replace="~{common :: common(~{::link})}"></div>
 <!--    <link rel="stylesheet" th:href="@{/user/css/counter.css}">-->
     <link rel="stylesheet" th:href=@{/user/css/services.css}>
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+    />
+    <link rel="stylesheet" th:href=@{/user/css/about.css}>
+    <link rel="stylesheet" th:href="@{/user/css/testimonial2.css}">
 
 </head>
 <body>
@@ -22,7 +28,8 @@
 <div th:replace="~{components/services :: services}"></div>
 
 <div th:insert="~{components/common :: head-title('Testimonial', 'What our Client Have to Say')}"></div>
-<div th:replace="~{components/testimonial :: testimonial}"></div>
+<div th:replace="~{components/testimonial :: testimonial2}"></div>
+<!--<div th:replace="~{pages/bootstrap1 :: testimonial}"></div>-->
 
 <!-- Footer Section -->
 <div th:replace="~{components/footer :: footer}"></div>
@@ -32,6 +39,8 @@
 <div th:replace="~{common :: common_js(~{::script})}"></div>
 <script th:src=@{/user/js/banner.js}></script>
 
-
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>-->
+<script th:src=@{/user/js/testimonial2.js}></script>
 </body>
 </html>

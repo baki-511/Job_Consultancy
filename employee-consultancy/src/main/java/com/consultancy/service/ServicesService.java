@@ -13,6 +13,8 @@ public interface ServicesService {
     
     Services getServiceById(Long serviceId);
     
+    Services getServiceByTitle(String serviceTitle);
+    
     ApiResponse deleteServiceById(Long serviceId);
     
     Services updateService(Services services, MultipartFile file);

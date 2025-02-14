@@ -30,6 +30,10 @@
                             <input type="text" class="form-control" id="name" name="title" th:value="${testimonial.title}" >
                         </div>
                         <div class="form-group mb-3">
+                            <label for="designation">Testimonial Designation</label>
+                            <input type="text" class="form-control" id="designation" name="designation" th:value="${testimonial.designation}" required>
+                        </div>
+                        <div class="form-group mb-3">
                             <label for="description">Description</label>
                             <textarea class="form-control" id="description" rows="6" name="description" >[[${testimonial.description}]]</textarea>
                         </div>

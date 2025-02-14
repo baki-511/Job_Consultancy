@@ -3,6 +3,7 @@ package com.consultancy.controller;
 import com.consultancy.entity.Resume;
 import com.consultancy.service.BannerService;
 import com.consultancy.service.ResumeService;
+import com.consultancy.service.ServicesService;
 import com.consultancy.service.TestimonialService;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +18,12 @@ import java.io.IOException;
 public class HomeController {
     @Autowired
     private ResumeService resumeService;
+    
     @Autowired
     private TestimonialService testimonialService;
+    
+    @Autowired
+    private ServicesService servicesService;
     
     @Autowired
     private BannerService bannerService;
@@ -27,6 +32,7 @@ public class HomeController {
     public String home(Model model) {
         model.addAttribute("testimonials", testimonialService.getAllTestimonial());
         model.addAttribute("banners", bannerService.getAllBanner());
+        model.addAttribute("services", servicesService.getAllServices());
         return "index";
     }
     
@@ -43,8 +49,17 @@ public class HomeController {
     }
     
     @GetMapping("/service")
-    public String service() {
+    public String getService(Model model) {
+        model.addAttribute("services", servicesService.getAllServices());
+        model.addAttribute("testimonials", testimonialService.getAllTestimonial());
         return "/pages/service";
+    }
+    
+    @GetMapping("/service/{serviceTitle}")
+    public String getServiceByTitle(@PathVariable String serviceTitle, Model model) {
+        model.addAttribute("service", servicesService.getServiceByTitle(serviceTitle));
+        model.addAttribute("testimonials", testimonialService.getAllTestimonial());
+        return "/pages/serviceInfo";
     }
     
     @GetMapping("/test3")
@@ -57,7 +72,10 @@ public class HomeController {
     }
     
     @GetMapping("/boot")
-    public String bootTest1() {
+    public String bootTest1(Model model) {
+        model.addAttribute("testimonials", testimonialService.getAllTestimonial());
+        model.addAttribute("banners", bannerService.getAllBanner());
+        model.addAttribute("services", servicesService.getAllServices());
         return "/pages/bootstrap1";
     }
     

@@ -3,6 +3,8 @@ package com.consultancy.repository;
 import com.consultancy.entity.Services;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ServicesRepository extends JpaRepository<Services, Long> {
+import java.util.Optional;
 
+public interface ServicesRepository extends JpaRepository<Services, Long> {
+    Optional<Services> findByTitle(String serviceTitle);
 }

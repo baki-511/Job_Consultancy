@@ -25,7 +25,7 @@ body {
 
 .container {
   width: 100%;
-  max-width: 400px;
+  max-width: 500px;
   padding: 20px;
 }
 
@@ -34,6 +34,15 @@ body {
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-box .img{
+  width: 100%;
+  text-align: center;
+}
+
+.login-box img{
+    width: 250px;
 }
 
 .login-box h2 {
@@ -223,6 +232,9 @@ button span:nth-child(4) {
 <body>
 <div class="container">
     <div class="login-box">
+        <div class="img">
+            <img src="/user/img/logo.png" alt="logo">
+        </div>
         <h2>Login</h2>
         <form action="/login" method="POST">
             <div class="user-box">

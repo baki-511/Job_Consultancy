@@ -9,38 +9,17 @@
 </head>
 <body>
 <div class="wrapper" th:fragment="services">
-    <h1>Our Services</h1>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta, illo animi. Fugit, non culpa corporis voluptatem repudiandae distinctio tempora odit.</p>
+    <div th:insert="~{components/common :: head-title('Services', 'Our Services')}"></div>
+
     <div class="content-box">
-        <div class="service-card first">
-            <i class="fa-solid fa-chart-line"></i>
-            <h2>Marketing Services</h2>
-            amet consectetur adipisicing elit. Ipsa nostrum voluptatibus magnam excepturi repellendus laboriosam pariatur omnis inventore numquam amet.
-        </div>
-        <div class="service-card">
-            <i class="fa-solid fa-code"></i>
-            <h2>Web Developement</h2>
-            adipisicing elit. Ipsa nostrum voluptatibus magnam excepturi repellendus laboriosam pariatur omnis inventore numquam amet.
-        </div>
-        <div class="service-card">
-            <i class="fa-solid fa-mobile-button"></i>
-            <h2>App Developement</h2>
-            Caboriosam pariatur omnis consectetur adipisicing elit. Ipsa nostrum voluptatibus magnam excepturi repellendus laboriosam pariatur omnis inventore numquam amet.
-        </div>
-        <div class="service-card">
-            <i class="fa-solid fa-tachograph-digital"></i>
-            <h2>Digital Marketing</h2>
-            amet consectetur adipisicing elit. Ipsa nostrum voluptatibus magnam excepturi repellendus laboriosam pariatur omnis inventore numquam amet.
-        </div>
-        <div class="service-card">
-            <i class="fa-solid fa-globe"></i>
-            <h2>SEO Management</h2>
-            adipisicing elit. Ipsa nostrum voluptatibus magnam excepturi repellendus laboriosam pariatur omnis inventore numquam amet.
-        </div>
-        <div class="service-card">
-            <i class="fa-solid fa-network-wired"></i>
-            <h2>Networking</h2>
-            Caboriosam pariatur omnis consectetur adipisicing elit. Ipsa nostrum voluptatibus magnam excepturi repellendus laboriosam pariatur omnis inventore numquam amet.
+        <div class="service-card" th:each="service : ${services}">
+            <span th:utext="${service.fontAwesomeIcon}"></span>
+            <h2 th:text="${service.title}">Web Developement</h2>
+            <p th:text="${service.description}">adipisicing elit. Ipsa nostrum voluptatibus magnam excepturi repellendus laboriosam pariatur omnis
+                inventore numquam amet.</p>
+            <div class="content">
+                <a th:href="@{|/service/${service.title}|}" class="read-more">Read More</a>
+            </div>
         </div>
     </div>
 </div>

@@ -9,6 +9,7 @@ public class Testimonial {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long testimonialId;
     private String title;
+    private String designation;
     @Column(length = 1000)
     private String description;
     
@@ -20,9 +21,10 @@ public class Testimonial {
     public Testimonial() {
     }
     
-    public Testimonial(Long testimonialId, String title, String description, String image) {
+    public Testimonial(Long testimonialId, String title, String designation, String description, String image) {
         this.testimonialId = testimonialId;
         this.title = title;
+        this.designation = designation;
         this.description = description;
         this.image = image;
     }
@@ -41,6 +43,14 @@ public class Testimonial {
     
     public void setTitle(String title) {
         this.title = title;
+    }
+    
+    public String getDesignation() {
+        return designation;
+    }
+    
+    public void setDesignation(String designation) {
+        this.designation = designation;
     }
     
     public String getDescription() {
@@ -64,8 +74,8 @@ public class Testimonial {
         return "Testimonial{" +
                 "testimonialId=" + testimonialId +
                 ", title='" + title + '\'' +
+                ", designation='" + designation + '\'' +
                 ", description='" + description + '\'' +
-                ", image='" + image + '\'' +
                 '}';
     }
 }
