@@ -44,7 +44,7 @@
                             <td class="text-nowrap px-2" th:text="${contact.email}"></td>
                             <td class="text-nowrap px-2" th:text="${contact.venue}"></td>
                             <td class="text-nowrap px-2" th:text="${contact.mobile}"></td>
-                            <td class="" th:text="${contact.message}"></td>
+                            <td class="text-nowrap" th:text="${contact.message}"></td>
                             <td class="text-nowrap px-2">
                                 <a th:href="@{'/admin/contact/delete/'+ ${contact.contactUsId}}" class="btn btn-danger"><i class="fa-regular fa-trash-can fa-xs"></i></a>
                             </td>

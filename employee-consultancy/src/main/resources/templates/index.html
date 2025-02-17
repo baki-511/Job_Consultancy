@@ -15,7 +15,7 @@
     />
     <link rel="stylesheet" th:href=@{/user/css/banner.css}>
     <link rel="stylesheet" th:href=@{/user/css/services.css}>
-<!--    <link rel="stylesheet" th:href="@{/user/css/career.css}">-->
+    <link rel="stylesheet" th:href="@{/user/css/choose_us.css}">
 
 </head>
 <body>
@@ -32,6 +32,9 @@
 <div th:replace="~{components/about :: about}"></div>
 
 <div th:replace="~{components/services :: services}"></div>
+
+<div th:insert="~{components/common :: head-title('', 'Why Choose Us')}"></div>
+<div th:replace="~{components/choose_us :: choose_us}"></div>
 
 
 <div th:insert="~{components/common :: head-title('Testimonial', 'What our Client Have to Say')}"></div>
